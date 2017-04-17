@@ -35,7 +35,7 @@ namespace KGAPIApp
         private string getTokenKey()
         {
             var code = webBrowserLoginTwitch.Url.ToString();
-            code = code.Substring(33);
+            code = code.Substring(57);
             code = code.Remove(30);
             return code;
         }
