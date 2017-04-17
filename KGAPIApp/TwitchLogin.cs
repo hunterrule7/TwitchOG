@@ -16,14 +16,16 @@ namespace KGAPIApp
     {
         string client_id = "pvqyut84yb72gkjqdcac7bwpw6ku4f";
         string client_secret = "6y2s4lnqfqhxhgczrxprdfz9khwuip";
-        string scope = "channel_stream+channel_read";
+        string scope = "channel_read+channel_stream";
+        string uniqueID = "372612798";
         private string finalUrl;
+        private string forceLoginUrl = "https://passport.twitch.tv/authentications/";
         private bool isDone = false;
         StreamWriter myWriter = new StreamWriter("TwitchAccessToken/accessToken.txt");
         public TwitchLogin()
         {
             InitializeComponent();
-            finalUrl = String.Format("https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id={0}&redirect_uri=http://www.kgresources.us&scope={1}", client_id, scope);
+            finalUrl = String.Format("https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id={0}&redirect_uri=http://www.kgresources.us&scope={1}&force_verify=true", client_id, scope);
         }
 
         private void TwitchLogin_Load(object sender, EventArgs e)
@@ -35,7 +37,7 @@ namespace KGAPIApp
         private string getTokenKey()
         {
             var code = webBrowserLoginTwitch.Url.ToString();
-            code = code.Substring(57);
+            code = code.Substring(41);
             code = code.Remove(30);
             return code;
         }
@@ -49,16 +51,33 @@ namespace KGAPIApp
         {
             try
             {
-                while (isDone == false)
+                //while (isDone == false)
+                //{
+                //    if (webBrowserLoginTwitch.Url.ToString() != finalUrl && webBrowserLoginTwitch.Url.ToString().Substring(43) != forceLoginUrl)
+                //    {
+                //        var code = getTokenKey();
+                //        myWriter.WriteLine(code);
+                //        myWriter.Close();
+                //        isDone = true;
+                //        Close();
+                //    }
+                //}
+                //MessageBox.Show(webBrowserLoginTwitch.Url.ToString());
+                //var hunter = webBrowserLoginTwitch.Url.ToString().Remove(41);
+                //MessageBox.Show(hunter);
+
+                switch (webBrowserLoginTwitch.Url.ToString().Remove(41))
                 {
-                    if (webBrowserLoginTwitch.Url.ToString() != finalUrl)
-                    {
+                    case "https://www.kgresources.us/#access_token=":
                         var code = getTokenKey();
                         myWriter.WriteLine(code);
                         myWriter.Close();
                         isDone = true;
                         Close();
-                    }
+                        break;
+
+                    default:
+                        break;
                 }
             }
             catch (Exception ex)

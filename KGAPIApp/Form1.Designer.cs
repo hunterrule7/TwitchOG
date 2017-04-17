@@ -45,9 +45,10 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.picBoxSpotifyLogo = new System.Windows.Forms.PictureBox();
             this.pgTwitch = new System.Windows.Forms.TabPage();
-            this.btnGetStreamKey = new System.Windows.Forms.Button();
+            this.btnGetChannel = new System.Windows.Forms.Button();
             this.btnLoginTwitch = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnChannelFollows = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.FacebookPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -244,7 +245,8 @@
             // 
             // pgTwitch
             // 
-            this.pgTwitch.Controls.Add(this.btnGetStreamKey);
+            this.pgTwitch.Controls.Add(this.btnChannelFollows);
+            this.pgTwitch.Controls.Add(this.btnGetChannel);
             this.pgTwitch.Controls.Add(this.btnLoginTwitch);
             this.pgTwitch.Controls.Add(this.pictureBox4);
             this.pgTwitch.Location = new System.Drawing.Point(4, 22);
@@ -254,25 +256,26 @@
             this.pgTwitch.Text = "Twitch";
             this.pgTwitch.UseVisualStyleBackColor = true;
             // 
-            // btnGetStreamKey
+            // btnGetChannel
             // 
-            this.btnGetStreamKey.Enabled = false;
-            this.btnGetStreamKey.Location = new System.Drawing.Point(246, 174);
-            this.btnGetStreamKey.Name = "btnGetStreamKey";
-            this.btnGetStreamKey.Size = new System.Drawing.Size(127, 41);
-            this.btnGetStreamKey.TabIndex = 2;
-            this.btnGetStreamKey.Text = "Get Stream Key";
-            this.btnGetStreamKey.UseVisualStyleBackColor = true;
-            this.btnGetStreamKey.Click += new System.EventHandler(this.btnGetFeed_Click);
+            this.btnGetChannel.Location = new System.Drawing.Point(120, 111);
+            this.btnGetChannel.Name = "btnGetChannel";
+            this.btnGetChannel.Size = new System.Drawing.Size(127, 41);
+            this.btnGetChannel.TabIndex = 2;
+            this.btnGetChannel.Text = "Get Channel Info";
+            this.btnGetChannel.UseVisualStyleBackColor = true;
+            this.btnGetChannel.Click += new System.EventHandler(this.btnGetFeed_Click);
             // 
             // btnLoginTwitch
             // 
-            this.btnLoginTwitch.Location = new System.Drawing.Point(246, 127);
+            this.btnLoginTwitch.Enabled = false;
+            this.btnLoginTwitch.Location = new System.Drawing.Point(8, 313);
             this.btnLoginTwitch.Name = "btnLoginTwitch";
             this.btnLoginTwitch.Size = new System.Drawing.Size(127, 41);
             this.btnLoginTwitch.TabIndex = 1;
             this.btnLoginTwitch.Text = "Login";
             this.btnLoginTwitch.UseVisualStyleBackColor = true;
+            this.btnLoginTwitch.Visible = false;
             this.btnLoginTwitch.Click += new System.EventHandler(this.btnLoginTwitch_Click);
             // 
             // pictureBox4
@@ -284,6 +287,16 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            // 
+            // btnChannelFollows
+            // 
+            this.btnChannelFollows.Location = new System.Drawing.Point(253, 111);
+            this.btnChannelFollows.Name = "btnChannelFollows";
+            this.btnChannelFollows.Size = new System.Drawing.Size(127, 41);
+            this.btnChannelFollows.TabIndex = 3;
+            this.btnChannelFollows.Text = "Get Channel Follows";
+            this.btnChannelFollows.UseVisualStyleBackColor = true;
+            this.btnChannelFollows.Click += new System.EventHandler(this.btnChannelFollows_Click);
             // 
             // Form1
             // 
@@ -333,7 +346,8 @@
         private System.Windows.Forms.TabPage pgTwitch;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnLoginTwitch;
-        private System.Windows.Forms.Button btnGetStreamKey;
+        private System.Windows.Forms.Button btnGetChannel;
+        private System.Windows.Forms.Button btnChannelFollows;
     }
 }
 

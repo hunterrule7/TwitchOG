@@ -1,0 +1,1 @@
+https://passport.twitch.tv/authentications/new?client_id=pvqyut84yb72gkjqdcac7bwpw6ku4f&force_verify=true&nonce=d076ea5652a1801257fd633b1ef4bb2ace5a8f73&redirect_uri=http:%2F%2Fwww.kgresources.us&response_type=token&scope=channel_read+channel_stream

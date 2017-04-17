@@ -20,7 +20,7 @@ namespace KGAPIApp
         public Form1()
         {
             InitializeComponent();
-            Facebook.getTxtInfo();
+            fbObj.getTxtInfo();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -114,6 +114,14 @@ namespace KGAPIApp
             btnAvailableDevices.Enabled = true;
         }
 
+        public void reloginButton()
+        {
+            btnGetChannel.Enabled = false;
+            btnLoginTwitch.Enabled = true;
+            btnLoginTwitch.Visible = true;
+            Refresh();
+        }
+
         private void btnAvailableDevices_Click(object sender, EventArgs e)
         {
             Spotify spObj = new Spotify();
@@ -125,13 +133,20 @@ namespace KGAPIApp
             Twitch tObj = new Twitch();
             tObj.startLogin();
             btnLoginTwitch.Enabled = false;
-            btnGetStreamKey.Enabled = true;
+            btnLoginTwitch.Visible = false;
+            btnGetChannel.Enabled = true;
         }
 
         private void btnGetFeed_Click(object sender, EventArgs e)
         {
             Twitch tObj = new Twitch();
-            tObj.getChannelStreamKey();
+            tObj.getChannelInfo();
+        }
+
+        private void btnChannelFollows_Click(object sender, EventArgs e)
+        {
+            Twitch tObj = new Twitch();
+            tObj.getChannelFollowers();
         }
     }
 }

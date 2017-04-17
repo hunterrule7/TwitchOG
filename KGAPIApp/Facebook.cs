@@ -17,7 +17,7 @@ namespace KGAPIApp
         static string access_token = "EAACEdEosepcBAEl9AI0bHRi2lpROPCQffqZBHdiECnfgwrZAe4ZBHApJTfDAU4Lbek2mOcwr15GZBuhFgpgOlQtPRwtZC0LSs6IISBDH17eRQN25W0LrsZAWPsU1YcgMsfuKRbIGuj2Un27ko6dpWdOGgKQp4bs1dopozxwbXWyp3COWUZA5MjlSbJLKqgp8XEZD";
         static bool postSuccess = false;
         static bool reauthNeeded = false;
-        static StreamReader myReader = new StreamReader("AccessToken/myAccessToken.txt"); // new code
+        StreamReader myReader = new StreamReader("AccessToken/myAccessToken.txt"); // new code
 
         public static void postStatus(string message)
         {
@@ -58,7 +58,7 @@ namespace KGAPIApp
         }
 
         // New code
-        public static void getTxtInfo()
+        public void getTxtInfo()
         {
             access_token = myReader.ReadToEnd();
             myReader.Close();
