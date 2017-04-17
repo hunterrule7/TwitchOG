@@ -46,54 +46,97 @@ namespace KGAPIApp
 
         public void getChannelID()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(188);
-            myResult = myResult.Remove(8);
-            MessageBox.Show("Channel ID: " + myResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(188);
+                myResult = myResult.Remove(8);
+                MessageBox.Show("Channel ID: " + myResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void getStreamKey()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(1676);
-            myResult = myResult.Remove(44);
-            MessageBox.Show("Stream Key: " + myResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(1676);
+                myResult = myResult.Remove(44);
+                MessageBox.Show("Stream Key: " + myResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void getFollowerCount()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(818);
-            myResult = myResult.Remove(4);
-            myResult = myResult.TrimEnd(',');
-            MessageBox.Show("Follower Count: " + myResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(818);
+                myResult = myResult.Remove(4);
+                myResult = myResult.TrimEnd(',');
+                MessageBox.Show("Follower Count: " + myResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void getStreamTitle()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(25);
-            myResult = myResult.Remove(100);
-            string[] twoResult = myResult.Split('"');
-            MessageBox.Show("Stream Title: " + twoResult[0], "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(25);
+                myResult = myResult.Remove(100);
+                string[] twoResult = myResult.Split('"');
+                MessageBox.Show("Stream Title: " + twoResult[0], "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void getCurrentGame()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(146);
-            myResult = myResult.Remove(100);
-            string[] twoResult = myResult.Split('"');
-            MessageBox.Show("Current Game: " + twoResult[0], "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(146);
+                myResult = myResult.Remove(100);
+                string[] twoResult = myResult.Split('"');
+                MessageBox.Show("Current Game: " + twoResult[0], "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void getChannelViews()
         {
-            var myResult = getTwitchInfo();
-            myResult = myResult.Substring(801);
-            myResult = myResult.Remove(6);
-            string[] twoResult = myResult.Split(',');
-            MessageBox.Show("Channel Views: " + twoResult[0], "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                var myResult = getTwitchInfo();
+                myResult = myResult.Substring(801);
+                myResult = myResult.Remove(6);
+                string[] twoResult = myResult.Split(',');
+                MessageBox.Show("Channel Views: " + twoResult[0], "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string getTwitchInfo()
@@ -122,7 +165,7 @@ namespace KGAPIApp
             }
             catch (WebException ex)
             {
-                if (ex.Message == "The remote server returned an error:(401) Unauthorized.")
+                if (ex.Message == "The remote server returned an error: (401) Unauthorized.")
                 {
                     MessageBox.Show("There was an error logging you in, please try to re-login. Error Code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     startLogin();
