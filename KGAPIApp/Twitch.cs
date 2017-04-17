@@ -15,7 +15,7 @@ namespace KGAPIApp
         string client_secret = "6y2s4lnqfqhxhgczrxprdfz9khwuip";
         string scope = "channel_read+channel_stream";
         string channel_id = "66302646";
-        string uniqueID = "372612798";
+        string uniqueID = "372612798";  //&oauth_token={2}
         bool keyIsGood = false;
         Form1 myObj = new Form1();
         string finalUrl;
@@ -44,8 +44,61 @@ namespace KGAPIApp
             return keyIsGood;
         }
 
-        public void getChannelInfo()
+        public void getChannelID()
         {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(188);
+            myResult = myResult.Remove(8);
+            MessageBox.Show("Channel ID: " + myResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void getStreamKey()
+        {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(1676);
+            myResult = myResult.Remove(44);
+            MessageBox.Show("Stream Key: " + myResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void getFollowerCount()
+        {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(818);
+            myResult = myResult.Remove(4);
+            myResult = myResult.TrimEnd(',');
+            MessageBox.Show("Follower Count: " + myResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void getStreamTitle()
+        {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(25);
+            myResult = myResult.Remove(100);
+            string[] twoResult = myResult.Split('"');
+            MessageBox.Show("Stream Title: " + twoResult[0], "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void getCurrentGame()
+        {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(146);
+            myResult = myResult.Remove(100);
+            string[] twoResult = myResult.Split('"');
+            MessageBox.Show("Current Game: " + twoResult[0], "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void getChannelViews()
+        {
+            var myResult = getTwitchInfo();
+            myResult = myResult.Substring(801);
+            myResult = myResult.Remove(6);
+            string[] twoResult = myResult.Split(',');
+            MessageBox.Show("Channel Views: " + twoResult[0], "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public string getTwitchInfo()
+        {
+            var result = "";
             try
             {
                 if (keyIsValid() == true)
@@ -56,43 +109,9 @@ namespace KGAPIApp
                     using (var stream = response.GetResponseStream())
                     using (StreamReader reader = new StreamReader(stream))
                     {
-                        var result = reader.ReadToEnd();
+                        result = reader.ReadToEnd();
                         reader.Close();
-                        MessageBox.Show(result);
-                    }
-                }
-                else
-                {
-                    startLogin();
-                    keyIsGood = true;
-                }
-            }
-            catch (WebException ex)
-            {
-                MessageBox.Show("There was an error logging you in, please try to re-login. Error Code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                startLogin();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void getChannelFollowers()
-        {
-            try
-            {
-                if (keyIsValid() == true)
-                {
-                    string myUrl = String.Format("https://api.twitch.tv/kraken/channels/{0}/follows?client_id={1}&oauth_token={2}", channel_id, client_id, getAccessToken());
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(myUrl);
-                    using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
-                    using (var stream = response.GetResponseStream())
-                    using (StreamReader reader = new StreamReader(stream))
-                    {
-                        var result = reader.ReadToEnd();
-                        reader.Close();
-                        MessageBox.Show(result);
+                        return result;
                     }
                 }
                 else
@@ -117,6 +136,7 @@ namespace KGAPIApp
             {
                 MessageBox.Show(ex.Message);
             }
+            return result;
         }
 
         public void startLogin()

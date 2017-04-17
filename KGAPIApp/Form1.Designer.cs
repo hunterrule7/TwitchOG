@@ -45,10 +45,14 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.picBoxSpotifyLogo = new System.Windows.Forms.PictureBox();
             this.pgTwitch = new System.Windows.Forms.TabPage();
-            this.btnGetChannel = new System.Windows.Forms.Button();
+            this.btnGetChannelID = new System.Windows.Forms.Button();
             this.btnLoginTwitch = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnChannelFollows = new System.Windows.Forms.Button();
+            this.btnGetStreamKey = new System.Windows.Forms.Button();
+            this.btnFollowerCount = new System.Windows.Forms.Button();
+            this.btnStreamTitle = new System.Windows.Forms.Button();
+            this.btnCurrentGame = new System.Windows.Forms.Button();
+            this.btnGetChannelViews = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.FacebookPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -245,8 +249,12 @@
             // 
             // pgTwitch
             // 
-            this.pgTwitch.Controls.Add(this.btnChannelFollows);
-            this.pgTwitch.Controls.Add(this.btnGetChannel);
+            this.pgTwitch.Controls.Add(this.btnGetChannelViews);
+            this.pgTwitch.Controls.Add(this.btnCurrentGame);
+            this.pgTwitch.Controls.Add(this.btnStreamTitle);
+            this.pgTwitch.Controls.Add(this.btnFollowerCount);
+            this.pgTwitch.Controls.Add(this.btnGetStreamKey);
+            this.pgTwitch.Controls.Add(this.btnGetChannelID);
             this.pgTwitch.Controls.Add(this.btnLoginTwitch);
             this.pgTwitch.Controls.Add(this.pictureBox4);
             this.pgTwitch.Location = new System.Drawing.Point(4, 22);
@@ -256,15 +264,15 @@
             this.pgTwitch.Text = "Twitch";
             this.pgTwitch.UseVisualStyleBackColor = true;
             // 
-            // btnGetChannel
+            // btnGetChannelID
             // 
-            this.btnGetChannel.Location = new System.Drawing.Point(120, 111);
-            this.btnGetChannel.Name = "btnGetChannel";
-            this.btnGetChannel.Size = new System.Drawing.Size(127, 41);
-            this.btnGetChannel.TabIndex = 2;
-            this.btnGetChannel.Text = "Get Channel Info";
-            this.btnGetChannel.UseVisualStyleBackColor = true;
-            this.btnGetChannel.Click += new System.EventHandler(this.btnGetFeed_Click);
+            this.btnGetChannelID.Location = new System.Drawing.Point(113, 111);
+            this.btnGetChannelID.Name = "btnGetChannelID";
+            this.btnGetChannelID.Size = new System.Drawing.Size(127, 41);
+            this.btnGetChannelID.TabIndex = 2;
+            this.btnGetChannelID.Text = "Get Channel ID";
+            this.btnGetChannelID.UseVisualStyleBackColor = true;
+            this.btnGetChannelID.Click += new System.EventHandler(this.btnGetFeed_Click);
             // 
             // btnLoginTwitch
             // 
@@ -288,15 +296,55 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // btnChannelFollows
+            // btnGetStreamKey
             // 
-            this.btnChannelFollows.Location = new System.Drawing.Point(253, 111);
-            this.btnChannelFollows.Name = "btnChannelFollows";
-            this.btnChannelFollows.Size = new System.Drawing.Size(127, 41);
-            this.btnChannelFollows.TabIndex = 3;
-            this.btnChannelFollows.Text = "Get Channel Follows";
-            this.btnChannelFollows.UseVisualStyleBackColor = true;
-            this.btnChannelFollows.Click += new System.EventHandler(this.btnChannelFollows_Click);
+            this.btnGetStreamKey.Location = new System.Drawing.Point(246, 111);
+            this.btnGetStreamKey.Name = "btnGetStreamKey";
+            this.btnGetStreamKey.Size = new System.Drawing.Size(127, 41);
+            this.btnGetStreamKey.TabIndex = 3;
+            this.btnGetStreamKey.Text = "Get Stream Key";
+            this.btnGetStreamKey.UseVisualStyleBackColor = true;
+            this.btnGetStreamKey.Click += new System.EventHandler(this.btnChannelFollows_Click);
+            // 
+            // btnFollowerCount
+            // 
+            this.btnFollowerCount.Location = new System.Drawing.Point(379, 111);
+            this.btnFollowerCount.Name = "btnFollowerCount";
+            this.btnFollowerCount.Size = new System.Drawing.Size(127, 41);
+            this.btnFollowerCount.TabIndex = 4;
+            this.btnFollowerCount.Text = "Get Follower Count";
+            this.btnFollowerCount.UseVisualStyleBackColor = true;
+            this.btnFollowerCount.Click += new System.EventHandler(this.btnFollowerCount_Click);
+            // 
+            // btnStreamTitle
+            // 
+            this.btnStreamTitle.Location = new System.Drawing.Point(113, 158);
+            this.btnStreamTitle.Name = "btnStreamTitle";
+            this.btnStreamTitle.Size = new System.Drawing.Size(127, 41);
+            this.btnStreamTitle.TabIndex = 5;
+            this.btnStreamTitle.Text = "Get Stream Title";
+            this.btnStreamTitle.UseVisualStyleBackColor = true;
+            this.btnStreamTitle.Click += new System.EventHandler(this.btnStreamTitle_Click);
+            // 
+            // btnCurrentGame
+            // 
+            this.btnCurrentGame.Location = new System.Drawing.Point(246, 158);
+            this.btnCurrentGame.Name = "btnCurrentGame";
+            this.btnCurrentGame.Size = new System.Drawing.Size(127, 41);
+            this.btnCurrentGame.TabIndex = 6;
+            this.btnCurrentGame.Text = "Get Current Game";
+            this.btnCurrentGame.UseVisualStyleBackColor = true;
+            this.btnCurrentGame.Click += new System.EventHandler(this.btnCurrentGame_Click);
+            // 
+            // btnGetChannelViews
+            // 
+            this.btnGetChannelViews.Location = new System.Drawing.Point(379, 158);
+            this.btnGetChannelViews.Name = "btnGetChannelViews";
+            this.btnGetChannelViews.Size = new System.Drawing.Size(127, 41);
+            this.btnGetChannelViews.TabIndex = 7;
+            this.btnGetChannelViews.Text = "Get Channel Views";
+            this.btnGetChannelViews.UseVisualStyleBackColor = true;
+            this.btnGetChannelViews.Click += new System.EventHandler(this.btnTopGames_Click);
             // 
             // Form1
             // 
@@ -346,8 +394,12 @@
         private System.Windows.Forms.TabPage pgTwitch;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnLoginTwitch;
-        private System.Windows.Forms.Button btnGetChannel;
-        private System.Windows.Forms.Button btnChannelFollows;
+        private System.Windows.Forms.Button btnGetChannelID;
+        private System.Windows.Forms.Button btnGetStreamKey;
+        private System.Windows.Forms.Button btnFollowerCount;
+        private System.Windows.Forms.Button btnStreamTitle;
+        private System.Windows.Forms.Button btnCurrentGame;
+        private System.Windows.Forms.Button btnGetChannelViews;
     }
 }
 

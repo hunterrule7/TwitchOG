@@ -116,7 +116,7 @@ namespace KGAPIApp
 
         public void reloginButton()
         {
-            btnGetChannel.Enabled = false;
+            btnGetChannelID.Enabled = false;
             btnLoginTwitch.Enabled = true;
             btnLoginTwitch.Visible = true;
             Refresh();
@@ -134,19 +134,43 @@ namespace KGAPIApp
             tObj.startLogin();
             btnLoginTwitch.Enabled = false;
             btnLoginTwitch.Visible = false;
-            btnGetChannel.Enabled = true;
+            btnGetChannelID.Enabled = true;
         }
 
         private void btnGetFeed_Click(object sender, EventArgs e)
         {
             Twitch tObj = new Twitch();
-            tObj.getChannelInfo();
+            tObj.getChannelID();
         }
 
         private void btnChannelFollows_Click(object sender, EventArgs e)
         {
             Twitch tObj = new Twitch();
-            tObj.getChannelFollowers();
+            tObj.getStreamKey();
+        }
+
+        private void btnFollowerCount_Click(object sender, EventArgs e)
+        {
+            Twitch tObj = new Twitch();
+            tObj.getFollowerCount();
+        }
+
+        private void btnStreamTitle_Click(object sender, EventArgs e)
+        {
+            Twitch tObj = new Twitch();
+            tObj.getStreamTitle();
+        }
+
+        private void btnCurrentGame_Click(object sender, EventArgs e)
+        {
+            Twitch tObj = new Twitch();
+            tObj.getCurrentGame();
+        }
+
+        private void btnTopGames_Click(object sender, EventArgs e)
+        {
+            Twitch tObj = new Twitch();
+            tObj.getChannelViews();
         }
     }
 }
