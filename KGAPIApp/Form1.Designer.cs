@@ -40,26 +40,27 @@
             this.btnDisconnectBot = new System.Windows.Forms.Button();
             this.btnConnectBot = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pgSpotify = new System.Windows.Forms.TabPage();
+            this.pgNightbot = new System.Windows.Forms.TabPage();
             this.btnAvailableDevices = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.picBoxSpotifyLogo = new System.Windows.Forms.PictureBox();
             this.pgTwitch = new System.Windows.Forms.TabPage();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.btnGetChannelViews = new System.Windows.Forms.Button();
+            this.btnCurrentGame = new System.Windows.Forms.Button();
+            this.btnStreamTitle = new System.Windows.Forms.Button();
+            this.btnFollowerCount = new System.Windows.Forms.Button();
+            this.btnGetStreamKey = new System.Windows.Forms.Button();
             this.btnGetChannelID = new System.Windows.Forms.Button();
             this.btnLoginTwitch = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnGetStreamKey = new System.Windows.Forms.Button();
-            this.btnFollowerCount = new System.Windows.Forms.Button();
-            this.btnStreamTitle = new System.Windows.Forms.Button();
-            this.btnCurrentGame = new System.Windows.Forms.Button();
-            this.btnGetChannelViews = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.FacebookPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.DiscordPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pgSpotify.SuspendLayout();
+            this.pgNightbot.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSpotifyLogo)).BeginInit();
             this.pgTwitch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,13 +70,13 @@
             // 
             this.tabControl.Controls.Add(this.FacebookPage);
             this.tabControl.Controls.Add(this.DiscordPage);
-            this.tabControl.Controls.Add(this.pgSpotify);
+            this.tabControl.Controls.Add(this.pgNightbot);
             this.tabControl.Controls.Add(this.pgTwitch);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(626, 388);
+            this.tabControl.Size = new System.Drawing.Size(745, 478);
             this.tabControl.TabIndex = 0;
             // 
             // FacebookPage
@@ -89,7 +90,7 @@
             this.FacebookPage.Location = new System.Drawing.Point(4, 22);
             this.FacebookPage.Name = "FacebookPage";
             this.FacebookPage.Padding = new System.Windows.Forms.Padding(3);
-            this.FacebookPage.Size = new System.Drawing.Size(618, 362);
+            this.FacebookPage.Size = new System.Drawing.Size(737, 452);
             this.FacebookPage.TabIndex = 0;
             this.FacebookPage.Text = "Facebook";
             this.FacebookPage.UseVisualStyleBackColor = true;
@@ -97,7 +98,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::KGAPIApp.Properties.Resources.FEZ_04_512;
-            this.pictureBox2.Location = new System.Drawing.Point(585, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(701, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(30, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +109,7 @@
             // btnAuthorize
             // 
             this.btnAuthorize.Enabled = false;
-            this.btnAuthorize.Location = new System.Drawing.Point(335, 313);
+            this.btnAuthorize.Location = new System.Drawing.Point(463, 410);
             this.btnAuthorize.Name = "btnAuthorize";
             this.btnAuthorize.Size = new System.Drawing.Size(130, 34);
             this.btnAuthorize.TabIndex = 1;
@@ -120,7 +121,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::KGAPIApp.Properties.Resources.Facebook_logo_pngimage___facebook_logopng___moshi_monsters_wiki_a9jmq8uc;
-            this.pictureBox3.Location = new System.Drawing.Point(81, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(140, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(457, 86);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,7 +130,7 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(471, 313);
+            this.btnSubmit.Location = new System.Drawing.Point(599, 410);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(130, 34);
             this.btnSubmit.TabIndex = 3;
@@ -143,7 +144,7 @@
             this.txtMessage.Location = new System.Drawing.Point(22, 115);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(579, 192);
+            this.txtMessage.Size = new System.Drawing.Size(707, 289);
             this.txtMessage.TabIndex = 2;
             // 
             // lblStatusUpdate
@@ -164,7 +165,7 @@
             this.DiscordPage.Controls.Add(this.pictureBox1);
             this.DiscordPage.Location = new System.Drawing.Point(4, 22);
             this.DiscordPage.Name = "DiscordPage";
-            this.DiscordPage.Size = new System.Drawing.Size(618, 362);
+            this.DiscordPage.Size = new System.Drawing.Size(737, 452);
             this.DiscordPage.TabIndex = 2;
             this.DiscordPage.Text = "Discord";
             this.DiscordPage.UseVisualStyleBackColor = true;
@@ -173,7 +174,7 @@
             // 
             this.btnDisconnectBot.Enabled = false;
             this.btnDisconnectBot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisconnectBot.Location = new System.Drawing.Point(142, 200);
+            this.btnDisconnectBot.Location = new System.Drawing.Point(206, 200);
             this.btnDisconnectBot.Name = "btnDisconnectBot";
             this.btnDisconnectBot.Size = new System.Drawing.Size(325, 46);
             this.btnDisconnectBot.TabIndex = 2;
@@ -185,7 +186,7 @@
             // btnConnectBot
             // 
             this.btnConnectBot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConnectBot.Location = new System.Drawing.Point(142, 148);
+            this.btnConnectBot.Location = new System.Drawing.Point(206, 148);
             this.btnConnectBot.Name = "btnConnectBot";
             this.btnConnectBot.Size = new System.Drawing.Size(325, 46);
             this.btnConnectBot.TabIndex = 1;
@@ -196,7 +197,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::KGAPIApp.Properties.Resources.fc0b01fe10a0b8c602fb0106d8189d9b;
-            this.pictureBox1.Location = new System.Drawing.Point(142, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(206, 61);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(325, 81);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,22 +205,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // pgSpotify
+            // pgNightbot
             // 
-            this.pgSpotify.Controls.Add(this.btnAvailableDevices);
-            this.pgSpotify.Controls.Add(this.btnLogin);
-            this.pgSpotify.Controls.Add(this.picBoxSpotifyLogo);
-            this.pgSpotify.Location = new System.Drawing.Point(4, 22);
-            this.pgSpotify.Name = "pgSpotify";
-            this.pgSpotify.Size = new System.Drawing.Size(618, 362);
-            this.pgSpotify.TabIndex = 3;
-            this.pgSpotify.Text = "Spotify";
-            this.pgSpotify.UseVisualStyleBackColor = true;
+            this.pgNightbot.Controls.Add(this.btnAvailableDevices);
+            this.pgNightbot.Controls.Add(this.btnLogin);
+            this.pgNightbot.Controls.Add(this.picBoxSpotifyLogo);
+            this.pgNightbot.Location = new System.Drawing.Point(4, 22);
+            this.pgNightbot.Name = "pgNightbot";
+            this.pgNightbot.Size = new System.Drawing.Size(737, 452);
+            this.pgNightbot.TabIndex = 3;
+            this.pgNightbot.Text = "Nightbot";
+            this.pgNightbot.UseVisualStyleBackColor = true;
             // 
             // btnAvailableDevices
             // 
             this.btnAvailableDevices.Enabled = false;
-            this.btnAvailableDevices.Location = new System.Drawing.Point(226, 168);
+            this.btnAvailableDevices.Location = new System.Drawing.Point(285, 168);
             this.btnAvailableDevices.Name = "btnAvailableDevices";
             this.btnAvailableDevices.Size = new System.Drawing.Size(166, 36);
             this.btnAvailableDevices.TabIndex = 2;
@@ -229,7 +230,8 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(243, 108);
+            this.btnLogin.Enabled = false;
+            this.btnLogin.Location = new System.Drawing.Point(302, 108);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(132, 35);
             this.btnLogin.TabIndex = 1;
@@ -239,8 +241,8 @@
             // 
             // picBoxSpotifyLogo
             // 
-            this.picBoxSpotifyLogo.Image = global::KGAPIApp.Properties.Resources.Spotify_logo_with_text_svg;
-            this.picBoxSpotifyLogo.Location = new System.Drawing.Point(135, 15);
+            this.picBoxSpotifyLogo.Image = global::KGAPIApp.Properties.Resources.logo_nightbot_1;
+            this.picBoxSpotifyLogo.Location = new System.Drawing.Point(194, 15);
             this.picBoxSpotifyLogo.Name = "picBoxSpotifyLogo";
             this.picBoxSpotifyLogo.Size = new System.Drawing.Size(349, 75);
             this.picBoxSpotifyLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -249,6 +251,7 @@
             // 
             // pgTwitch
             // 
+            this.pgTwitch.Controls.Add(this.webBrowser1);
             this.pgTwitch.Controls.Add(this.btnGetChannelViews);
             this.pgTwitch.Controls.Add(this.btnCurrentGame);
             this.pgTwitch.Controls.Add(this.btnStreamTitle);
@@ -259,14 +262,73 @@
             this.pgTwitch.Controls.Add(this.pictureBox4);
             this.pgTwitch.Location = new System.Drawing.Point(4, 22);
             this.pgTwitch.Name = "pgTwitch";
-            this.pgTwitch.Size = new System.Drawing.Size(618, 362);
+            this.pgTwitch.Size = new System.Drawing.Size(737, 452);
             this.pgTwitch.TabIndex = 4;
             this.pgTwitch.Text = "Twitch";
             this.pgTwitch.UseVisualStyleBackColor = true;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(136, 100);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(593, 344);
+            this.webBrowser1.TabIndex = 8;
+            this.webBrowser1.Url = new System.Uri("https://www.twitch.tv/kryptongamingchannel/chat?popout=", System.UriKind.Absolute);
+            // 
+            // btnGetChannelViews
+            // 
+            this.btnGetChannelViews.Location = new System.Drawing.Point(3, 288);
+            this.btnGetChannelViews.Name = "btnGetChannelViews";
+            this.btnGetChannelViews.Size = new System.Drawing.Size(127, 41);
+            this.btnGetChannelViews.TabIndex = 7;
+            this.btnGetChannelViews.Text = "Get Channel Views";
+            this.btnGetChannelViews.UseVisualStyleBackColor = true;
+            this.btnGetChannelViews.Click += new System.EventHandler(this.btnTopGames_Click);
+            // 
+            // btnCurrentGame
+            // 
+            this.btnCurrentGame.Location = new System.Drawing.Point(3, 194);
+            this.btnCurrentGame.Name = "btnCurrentGame";
+            this.btnCurrentGame.Size = new System.Drawing.Size(127, 41);
+            this.btnCurrentGame.TabIndex = 6;
+            this.btnCurrentGame.Text = "Get Current Game";
+            this.btnCurrentGame.UseVisualStyleBackColor = true;
+            this.btnCurrentGame.Click += new System.EventHandler(this.btnCurrentGame_Click);
+            // 
+            // btnStreamTitle
+            // 
+            this.btnStreamTitle.Location = new System.Drawing.Point(3, 147);
+            this.btnStreamTitle.Name = "btnStreamTitle";
+            this.btnStreamTitle.Size = new System.Drawing.Size(127, 41);
+            this.btnStreamTitle.TabIndex = 5;
+            this.btnStreamTitle.Text = "Get Stream Title";
+            this.btnStreamTitle.UseVisualStyleBackColor = true;
+            this.btnStreamTitle.Click += new System.EventHandler(this.btnStreamTitle_Click);
+            // 
+            // btnFollowerCount
+            // 
+            this.btnFollowerCount.Location = new System.Drawing.Point(3, 241);
+            this.btnFollowerCount.Name = "btnFollowerCount";
+            this.btnFollowerCount.Size = new System.Drawing.Size(127, 41);
+            this.btnFollowerCount.TabIndex = 4;
+            this.btnFollowerCount.Text = "Get Follower Count";
+            this.btnFollowerCount.UseVisualStyleBackColor = true;
+            this.btnFollowerCount.Click += new System.EventHandler(this.btnFollowerCount_Click);
+            // 
+            // btnGetStreamKey
+            // 
+            this.btnGetStreamKey.Location = new System.Drawing.Point(3, 335);
+            this.btnGetStreamKey.Name = "btnGetStreamKey";
+            this.btnGetStreamKey.Size = new System.Drawing.Size(127, 41);
+            this.btnGetStreamKey.TabIndex = 3;
+            this.btnGetStreamKey.Text = "Get Stream Key";
+            this.btnGetStreamKey.UseVisualStyleBackColor = true;
+            this.btnGetStreamKey.Click += new System.EventHandler(this.btnChannelFollows_Click);
+            // 
             // btnGetChannelID
             // 
-            this.btnGetChannelID.Location = new System.Drawing.Point(113, 111);
+            this.btnGetChannelID.Location = new System.Drawing.Point(3, 100);
             this.btnGetChannelID.Name = "btnGetChannelID";
             this.btnGetChannelID.Size = new System.Drawing.Size(127, 41);
             this.btnGetChannelID.TabIndex = 2;
@@ -277,7 +339,7 @@
             // btnLoginTwitch
             // 
             this.btnLoginTwitch.Enabled = false;
-            this.btnLoginTwitch.Location = new System.Drawing.Point(8, 313);
+            this.btnLoginTwitch.Location = new System.Drawing.Point(3, 382);
             this.btnLoginTwitch.Name = "btnLoginTwitch";
             this.btnLoginTwitch.Size = new System.Drawing.Size(127, 41);
             this.btnLoginTwitch.TabIndex = 1;
@@ -289,68 +351,18 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::KGAPIApp.Properties.Resources.download;
-            this.pictureBox4.Location = new System.Drawing.Point(120, 14);
+            this.pictureBox4.Location = new System.Drawing.Point(164, 3);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(378, 91);
+            this.pictureBox4.Size = new System.Drawing.Size(409, 91);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
-            // 
-            // btnGetStreamKey
-            // 
-            this.btnGetStreamKey.Location = new System.Drawing.Point(246, 111);
-            this.btnGetStreamKey.Name = "btnGetStreamKey";
-            this.btnGetStreamKey.Size = new System.Drawing.Size(127, 41);
-            this.btnGetStreamKey.TabIndex = 3;
-            this.btnGetStreamKey.Text = "Get Stream Key";
-            this.btnGetStreamKey.UseVisualStyleBackColor = true;
-            this.btnGetStreamKey.Click += new System.EventHandler(this.btnChannelFollows_Click);
-            // 
-            // btnFollowerCount
-            // 
-            this.btnFollowerCount.Location = new System.Drawing.Point(379, 111);
-            this.btnFollowerCount.Name = "btnFollowerCount";
-            this.btnFollowerCount.Size = new System.Drawing.Size(127, 41);
-            this.btnFollowerCount.TabIndex = 4;
-            this.btnFollowerCount.Text = "Get Follower Count";
-            this.btnFollowerCount.UseVisualStyleBackColor = true;
-            this.btnFollowerCount.Click += new System.EventHandler(this.btnFollowerCount_Click);
-            // 
-            // btnStreamTitle
-            // 
-            this.btnStreamTitle.Location = new System.Drawing.Point(113, 158);
-            this.btnStreamTitle.Name = "btnStreamTitle";
-            this.btnStreamTitle.Size = new System.Drawing.Size(127, 41);
-            this.btnStreamTitle.TabIndex = 5;
-            this.btnStreamTitle.Text = "Get Stream Title";
-            this.btnStreamTitle.UseVisualStyleBackColor = true;
-            this.btnStreamTitle.Click += new System.EventHandler(this.btnStreamTitle_Click);
-            // 
-            // btnCurrentGame
-            // 
-            this.btnCurrentGame.Location = new System.Drawing.Point(246, 158);
-            this.btnCurrentGame.Name = "btnCurrentGame";
-            this.btnCurrentGame.Size = new System.Drawing.Size(127, 41);
-            this.btnCurrentGame.TabIndex = 6;
-            this.btnCurrentGame.Text = "Get Current Game";
-            this.btnCurrentGame.UseVisualStyleBackColor = true;
-            this.btnCurrentGame.Click += new System.EventHandler(this.btnCurrentGame_Click);
-            // 
-            // btnGetChannelViews
-            // 
-            this.btnGetChannelViews.Location = new System.Drawing.Point(379, 158);
-            this.btnGetChannelViews.Name = "btnGetChannelViews";
-            this.btnGetChannelViews.Size = new System.Drawing.Size(127, 41);
-            this.btnGetChannelViews.TabIndex = 7;
-            this.btnGetChannelViews.Text = "Get Channel Views";
-            this.btnGetChannelViews.UseVisualStyleBackColor = true;
-            this.btnGetChannelViews.Click += new System.EventHandler(this.btnTopGames_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 388);
+            this.ClientSize = new System.Drawing.Size(745, 478);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -365,7 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.DiscordPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pgSpotify.ResumeLayout(false);
+            this.pgNightbot.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSpotifyLogo)).EndInit();
             this.pgTwitch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -387,7 +399,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnAuthorize;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TabPage pgSpotify;
+        private System.Windows.Forms.TabPage pgNightbot;
         private System.Windows.Forms.PictureBox picBoxSpotifyLogo;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnAvailableDevices;
@@ -400,6 +412,7 @@
         private System.Windows.Forms.Button btnStreamTitle;
         private System.Windows.Forms.Button btnCurrentGame;
         private System.Windows.Forms.Button btnGetChannelViews;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
 

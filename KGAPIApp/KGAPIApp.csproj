@@ -226,6 +226,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="ReadMe\ReadMe.txt" />
+    <None Include="Resources\logo nightbot 1.png" />
+    <None Include="Resources\logo nightbot.png" />
     <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

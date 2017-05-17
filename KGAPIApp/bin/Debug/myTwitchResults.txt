@@ -1,0 +1,20 @@
+{"mature":null
+"status":"[KGP] Ghost Recon: Wildlands | Xbox One | Lots of Fun! Join the Hype!"
+"broadcaster_language":"en"
+"display_name":"KryptonGamingChannel"
+"game":"Tom Clancy's Ghost Recon: Wildlands"
+"language":"en"
+"_id":66302646
+"name":"kryptongamingchannel"
+"created_at":"2014-07-14T06:38:41Z"
+"updated_at":"2017-05-16T16:05:23Z"
+"partner":false
+"logo":"https://static-cdn.jtvnw.net/jtv_user_pictures/kryptongamingchannel-profile_image-8b83db10b09acb03-300x300.jpeg"
+"video_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/kryptongamingchannel-channel_offline_image-9faa2020ce530869-1920x1080.jpeg"
+"profile_banner":"https://static-cdn.jtvnw.net/jtv_user_pictures/kryptongamingchannel-profile_banner-0cf4ece684df47e5-480.jpeg"
+"profile_banner_background_color":null
+"url":"https://www.twitch.tv/kryptongamingchannel"
+"views":1548
+"followers":108
+"_links":{"self":"https://api.twitch.tv/kraken/channels/kryptongamingchannel"
+"follows":"https://api.twitch.tv/kraken/channels/kryptongamingch

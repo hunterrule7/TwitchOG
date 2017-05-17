@@ -136,10 +136,16 @@
   <data name="Facebook-logo-pngimage---facebook-logopng---moshi-monsters-wiki-a9jmq8uc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Facebook-logo-pngimage---facebook-logopng---moshi-monsters-wiki-a9jmq8uc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Spotify_logo_with_text.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Spotify_logo_with_text.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo nightbot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo nightbot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Spotify_logo_with_text.svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Spotify_logo_with_text.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo nightbot 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo nightbot 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

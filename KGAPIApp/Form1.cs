@@ -102,9 +102,7 @@ namespace KGAPIApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SpotifyLogin splObj = new SpotifyLogin();
-            splObj.Show();
-            changeBtnSpotify();
+            // Nightbot Login Logic Here
         }
 
         public void changeBtnSpotify()

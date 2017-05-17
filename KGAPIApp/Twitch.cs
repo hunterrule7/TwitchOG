@@ -49,9 +49,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(188);
-                myResult = myResult.Remove(8);
-                MessageBox.Show("Channel ID: " + myResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[6];
+                finalResult = finalResult.Substring(6);
+                //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Channel ID: " + finalResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
             catch (Exception ex)
@@ -65,9 +67,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(1676);
-                myResult = myResult.Remove(44);
-                MessageBox.Show("Stream Key: " + myResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[31];
+                finalResult = finalResult.Substring(14);
+                finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Stream Key: " + finalResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -80,10 +84,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(818);
-                myResult = myResult.Remove(4);
-                myResult = myResult.TrimEnd(',');
-                MessageBox.Show("Follower Count: " + myResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[17];
+                finalResult = finalResult.Substring(12);
+                //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Follower Count: " + finalResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -96,10 +101,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(25);
-                myResult = myResult.Remove(100);
-                string[] twoResult = myResult.Split('"');
-                MessageBox.Show("Stream Title: " + twoResult[0], "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[1];
+                finalResult = finalResult.Substring(10);
+                finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Stream Title: " + finalResult, "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -112,10 +118,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(146);
-                myResult = myResult.Remove(100);
-                string[] twoResult = myResult.Split('"');
-                MessageBox.Show("Current Game: " + twoResult[0], "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[4];
+                finalResult = finalResult.Substring(8);
+                finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Current Game: " + finalResult, "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -128,10 +135,11 @@ namespace KGAPIApp
             try
             {
                 var myResult = getTwitchInfo();
-                myResult = myResult.Substring(801);
-                myResult = myResult.Remove(6);
-                string[] twoResult = myResult.Split(',');
-                MessageBox.Show("Channel Views: " + twoResult[0], "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string[] results = myResult.Split(',');
+                string finalResult = results[16];
+                finalResult = finalResult.Substring(8);
+                //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                MessageBox.Show("Channel Views: " + finalResult, "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

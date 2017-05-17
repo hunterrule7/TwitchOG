@@ -113,6 +113,26 @@ namespace KGAPIApp.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_nightbot {
+            get {
+                object obj = ResourceManager.GetObject("logo nightbot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_nightbot_1 {
+            get {
+                object obj = ResourceManager.GetObject("logo nightbot 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nature_wallpaper_desktop_3d_7899_hd_wallpapers {
             get {
                 object obj = ResourceManager.GetObject("nature-wallpaper-desktop-3d-7899-hd-wallpapers", resourceCulture);
