@@ -48,12 +48,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[6];
-                finalResult = finalResult.Substring(6);
-                //finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Channel ID: " + finalResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+                {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[6];
+                    finalResult = finalResult.Substring(6);
+                    //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Channel ID: " + finalResult, "Twitch Channel ID", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    startLogin();
+                    keyIsGood = true;
+                }
                 
             }
             catch (Exception ex)
@@ -66,12 +74,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[31];
-                finalResult = finalResult.Substring(14);
-                finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Stream Key: " + finalResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+                {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[31];
+                    finalResult = finalResult.Substring(14);
+                    finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Stream Key: " + finalResult, "Twitch Stream Key", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    startLogin();
+                    keyIsGood = true;
+                }
             }
             catch (Exception ex)
             {
@@ -83,12 +99,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[17];
-                finalResult = finalResult.Substring(12);
-                //finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Follower Count: " + finalResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+                {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[17];
+                    finalResult = finalResult.Substring(12);
+                    //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Follower Count: " + finalResult, "Twitch Follower Count", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    startLogin();
+                    keyIsGood = true;
+                }
             }
             catch (Exception ex)
             {
@@ -100,12 +124,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[1];
-                finalResult = finalResult.Substring(10);
-                finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Stream Title: " + finalResult, "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+                {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[1];
+                    finalResult = finalResult.Substring(10);
+                    finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Stream Title: " + finalResult, "Twitch Stream Title", MessageBoxButtons.OK, MessageBoxIcon.Information); 
+                }
+                else
+                {
+                    startLogin();
+                    keyIsGood = true;
+                }
             }
             catch (Exception ex)
             {
@@ -147,8 +179,26 @@ namespace KGAPIApp
             }
         }
 
+        private void updateAccountID()
+        {
+            StreamReader reader = new StreamReader("Twitch/AccountInfo/clientID.txt");
+            string updatedID = reader.ReadToEnd();
+            client_id = updatedID;
+            reader.Close();
+        }
+
+        private void updateAccountSecret()
+        {
+            StreamReader reader = new StreamReader("Twitch/AccountInfo/clientSecret.txt");
+            string updatedSecret = reader.ReadToEnd();
+            client_id = updatedSecret;
+            reader.Close();
+        }
+
         public string getTwitchInfo()
         {
+            updateAccountID();
+            updateAccountSecret();
             var result = "";
             try
             {
@@ -175,12 +225,12 @@ namespace KGAPIApp
             {
                 if (ex.Message == "The remote server returned an error: (401) Unauthorized.")
                 {
-                    MessageBox.Show("There was an error logging you in, please try to re-login. Error Code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There was an error logging you in. Make sure your account info is set. Error Code: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     startLogin();
                 }
                 else
                 {
-                    MessageBox.Show("An error has occured. Error code: " + ex.Message);
+                    MessageBox.Show("An error has occured. Make sure your account info is set in the settings page. Error code: " + ex.Message);
                 }
             }
             catch (Exception ex)

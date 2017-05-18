@@ -156,3 +156,4 @@ C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\obj\Debug\KGAPIApp.Propert
 C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\obj\Debug\KGAPIApp.SpotifyLogin.resources
 C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\obj\Debug\KGAPIApp.TwitchLogin.resources
 C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\obj\Debug\KGAPIApp.csproj.GenerateResource.Cache
+C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\obj\Debug\KGAPIApp.TwitchSettings.resources

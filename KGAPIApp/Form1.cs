@@ -170,5 +170,11 @@ namespace KGAPIApp
             Twitch tObj = new Twitch();
             tObj.getChannelViews();
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            TwitchSettings twitchSettings = new TwitchSettings();
+            twitchSettings.Show();
+        }
     }
 }

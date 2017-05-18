@@ -54,6 +54,7 @@
             this.btnGetChannelID = new System.Windows.Forms.Button();
             this.btnLoginTwitch = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tabControl.SuspendLayout();
             this.FacebookPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSpotifyLogo)).BeginInit();
             this.pgTwitch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -251,6 +253,7 @@
             // 
             // pgTwitch
             // 
+            this.pgTwitch.Controls.Add(this.pictureBox5);
             this.pgTwitch.Controls.Add(this.webBrowser1);
             this.pgTwitch.Controls.Add(this.btnGetChannelViews);
             this.pgTwitch.Controls.Add(this.btnCurrentGame);
@@ -358,6 +361,17 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::KGAPIApp.Properties.Resources.FEZ_04_512;
+            this.pictureBox5.Location = new System.Drawing.Point(704, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxSpotifyLogo)).EndInit();
             this.pgTwitch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,6 +428,7 @@
         private System.Windows.Forms.Button btnCurrentGame;
         private System.Windows.Forms.Button btnGetChannelViews;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
 

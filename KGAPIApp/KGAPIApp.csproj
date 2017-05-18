@@ -164,6 +164,12 @@
     <Compile Include="TwitchLogin.Designer.cs">
       <DependentUpon>TwitchLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="TwitchSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TwitchSettings.Designer.cs">
+      <DependentUpon>TwitchSettings.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TwitchLogin.resx">
       <DependentUpon>TwitchLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TwitchSettings.resx">
+      <DependentUpon>TwitchSettings.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
