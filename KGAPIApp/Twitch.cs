@@ -149,12 +149,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[4];
-                finalResult = finalResult.Substring(8);
-                finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Current Game: " + finalResult, "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+	            {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[4];
+                    finalResult = finalResult.Substring(8);
+                    finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Current Game: " + finalResult, "Current Twitch Game", MessageBoxButtons.OK, MessageBoxIcon.Information);
+	            }
+                else
+                {
+                    startLogin();
+                    keyIsGood = true;
+                }
             }
             catch (Exception ex)
             {
@@ -166,12 +174,20 @@ namespace KGAPIApp
         {
             try
             {
-                var myResult = getTwitchInfo();
-                string[] results = myResult.Split(',');
-                string finalResult = results[16];
-                finalResult = finalResult.Substring(8);
-                //finalResult = finalResult.Remove(finalResult.Count() - 1);
-                MessageBox.Show("Channel Views: " + finalResult, "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (keyIsValid() == true)
+	            {
+                    var myResult = getTwitchInfo();
+                    string[] results = myResult.Split(',');
+                    string finalResult = results[16];
+                    finalResult = finalResult.Substring(8);
+                    //finalResult = finalResult.Remove(finalResult.Count() - 1);
+                    MessageBox.Show("Channel Views: " + finalResult, "Twitch Channel Views", MessageBoxButtons.OK, MessageBoxIcon.Information);
+	            }
+                else
+	            {
+                    startLogin();
+                    keyIsGood = true;
+	            }
             }
             catch (Exception ex)
             {
