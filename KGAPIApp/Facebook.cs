@@ -8,6 +8,7 @@ using System.Net;
 using System.IO;
 using Facebook; // Used only for access token
 using System.Dynamic;
+using System.Data.Linq;
 
 namespace KGAPIApp
 {

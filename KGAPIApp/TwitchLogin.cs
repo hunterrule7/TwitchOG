@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Data.Linq;
 
 namespace KGAPIApp
 {
@@ -21,7 +22,7 @@ namespace KGAPIApp
         private string finalUrl;
         private string forceLoginUrl = "https://passport.twitch.tv/authentications/";
         private bool isDone = false;
-        StreamWriter myWriter = new StreamWriter("TwitchAccessToken/accessToken.txt");
+        //StreamWriter myWriter = new StreamWriter("TwitchAccessToken/accessToken.txt"); // get rid of this
         public TwitchLogin()
         {
             InitializeComponent();
@@ -47,6 +48,18 @@ namespace KGAPIApp
             webBrowserLoginTwitch.Navigate(finalUrl);
         }
 
+        private void clearDB()
+        {
+            TOGDataContext db = new TOGDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\TwitchOG.mdf;Integrated Security=True");
+            Table<TwitchInfo> twitchTable = db.GetTable<TwitchInfo>();
+            IQueryable<TwitchInfo> detailQuery = from TwitchInfo in twitchTable where TwitchInfo.Id == 1 select TwitchInfo;
+            foreach (TwitchInfo item in detailQuery)
+            {
+                db.TwitchInfos.DeleteOnSubmit(item);
+                db.SubmitChanges();
+            }
+        }
+
         private void webBrowserLoginTwitch_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             try
@@ -70,8 +83,13 @@ namespace KGAPIApp
                 {
                     case "https://www.kgresources.us/#access_token=":
                         var code = getTokenKey();
-                        myWriter.WriteLine(code);
-                        myWriter.Close();
+                        clearDB();
+                        TOGDataContext db = new TOGDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\TwitchOG.mdf;Integrated Security=True");
+                        TwitchInfo tInfo = new TwitchInfo();
+                        tInfo.accessToken = code;
+                        tInfo.Id = 1;
+                        db.TwitchInfos.InsertOnSubmit(tInfo);
+                        db.SubmitChanges();
                         isDone = true;
                         Close();
                         break;

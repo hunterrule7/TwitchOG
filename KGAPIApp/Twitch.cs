@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using System.Data.Linq;
 
 namespace KGAPIApp
 {
     class Twitch
     {
-        string client_id = "pvqyut84yb72gkjqdcac7bwpw6ku4f";
-        string client_secret = "6y2s4lnqfqhxhgczrxprdfz9khwuip";
+        string myClient_id = "pvqyut84yb72gkjqdcac7bwpw6ku4f";
+        string myClient_secret = "6y2s4lnqfqhxhgczrxprdfz9khwuip";
         string scope = "channel_read+channel_stream";
         string channel_id = "66302646";
         string uniqueID = "372612798";  //&oauth_token={2}
@@ -34,12 +35,23 @@ namespace KGAPIApp
 
         private bool keyIsValid()
         {
-            StreamReader reader = new StreamReader("TwitchAccessToken/accessToken.txt");
-            var token = reader.ReadToEnd();
-            reader.Close();
-            if (token != "")
+            //StreamReader reader = new StreamReader("TwitchAccessToken/accessToken.txt");
+            //var token = reader.ReadToEnd();
+            //reader.Close();
+            //if (token != "")
+            //{
+            //    keyIsGood = true;
+            //}
+            // y0gz77qhdy4o5l5606oru4eu817lnh
+            TOGDataContext db = new TOGDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\TwitchOG.mdf;Integrated Security=True");
+            Table<TwitchInfo> twitchTable = db.GetTable<TwitchInfo>();
+            IQueryable<TwitchInfo> detailQuery = from TwitchInfo in twitchTable where TwitchInfo.Id == 1 select TwitchInfo;
+            foreach (TwitchInfo item in detailQuery)
             {
-                keyIsGood = true;
+                if (item.accessToken != "" && item.accessToken != null)
+                {
+                    keyIsGood = true;
+                }
             }
             return keyIsGood;
         }
@@ -195,32 +207,34 @@ namespace KGAPIApp
             }
         }
 
-        private void updateAccountID()
+        private void updateTwitchInfo()
         {
-            StreamReader reader = new StreamReader("Twitch/AccountInfo/clientID.txt");
-            string updatedID = reader.ReadToEnd();
-            client_id = updatedID;
-            reader.Close();
-        }
-
-        private void updateAccountSecret()
-        {
-            StreamReader reader = new StreamReader("Twitch/AccountInfo/clientSecret.txt");
-            string updatedSecret = reader.ReadToEnd();
-            client_id = updatedSecret;
-            reader.Close();
+            try
+            {
+                TOGDataContext db = new TOGDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hunter Gulley\Source\Repos\TwitchOG\KGAPIApp\TwitchOG.mdf;Integrated Security=True");
+                Table<TwitchInfo> twitchTable = db.GetTable<TwitchInfo>();
+                IQueryable<TwitchInfo> detailQuery = from TwitchInfo in twitchTable where TwitchInfo.Id == 1 select TwitchInfo;
+                foreach (TwitchInfo item in detailQuery)
+                {
+                    myClient_id = item.client_id;
+                    myClient_secret = item.client_secret;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string getTwitchInfo()
         {
-            updateAccountID();
-            updateAccountSecret();
+            updateTwitchInfo();
             var result = "";
             try
             {
                 if (keyIsValid() == true)
                 {
-                    string myUrl = String.Format("https://api.twitch.tv/kraken/channel?client_id={0}&oauth_token={1}", client_id, getAccessToken());
+                    string myUrl = String.Format("https://api.twitch.tv/kraken/channel?client_id={0}&oauth_token={1}", myClient_id, getAccessToken());
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(myUrl);
                     using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
                     using (var stream = response.GetResponseStream())

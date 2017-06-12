@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TOG">
+  <DataContextMoniker Name="/TOGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a31c99b3-62ba-4cab-9bca-49d8504306cb" absoluteBounds="3.875, 1.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/TOGDataContext/TwitchInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b0f0079-94db-4b2d-8a47-5ab113a13b4d" absoluteBounds="3.89, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TwitchOG" Class="TOGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\TwitchOG.mdf;Integrated Security=True" SettingsObjectName="KGAPIApp.Properties.Settings" SettingsPropertyName="TwitchOGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TwitchInfo" Member="TwitchInfos">
+    <Type Name="TwitchInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="client_id" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="client_secret" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="accessToken" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
